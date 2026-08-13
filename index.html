@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>💌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="bg-hearts" aria-hidden="true"></div>
+
+<!-- Intro screen -->
+<section id="screen-intro" class="screen active">
+  <div class="intro-card">
+    <div class="intro-heart">💕</div>
+    <h1>משחק זיכרון</h1>
+    <p class="subtitle">מצאי את כל הזוגות...<br>יש הפתעה בסוף 👀</p>
+    <button id="btn-start" class="btn-primary">בואי נשחק</button>
+  </div>
+</section>
+
+<!-- Game screen -->
+<section id="screen-game" class="screen">
+  <header class="game-header">
+    <div class="stat">
+      <span class="stat-label">מהלכים</span>
+      <span id="move-count" class="stat-value">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">זוגות</span>
+      <span><span id="pair-count">0</span>/8</span>
+    </div>
+  </header>
+  <div id="board" class="board"></div>
+</section>
+
+<!-- Loading / reconstructing memories -->
+<section id="screen-loading" class="screen">
+  <div class="loading-wrap">
+    <div id="loading-percent" class="loading-percent">0%</div>
+    <div class="loading-bar-track">
+      <div id="loading-bar-fill" class="loading-bar-fill"></div>
+    </div>
+    <div id="loading-label" class="loading-label">משחזרים את הסיפור שלנו...</div>
+    <div id="loading-hearts" class="loading-hearts">
+      <span class="lh lh1">❤️</span>
+      <span class="lh lh2">❤️❤️</span>
+      <span class="lh lh3">❤️❤️❤️</span>
+    </div>
+    <div id="loading-done" class="loading-done">הושלם</div>
+  </div>
+</section>
+
+<!-- Black fade -->
+<div id="blackout" class="blackout"></div>
+
+<!-- Finale: photo + heart + sentence -->
+<section id="screen-finale" class="screen">
+  <div class="finale-photo-wrap">
+    <img id="finale-photo" src="images/finale.jpg" alt="">
+    <svg class="heart-draw" viewBox="0 0 200 190" preserveAspectRatio="none">
+      <path id="heart-path" d="M100,170 C40,120 5,85 5,50 C5,20 28,2 55,2 C75,2 90,15 100,35 C110,15 125,2 145,2 C172,2 195,20 195,50 C195,85 160,120 100,170 Z"/>
+    </svg>
+  </div>
+  <p id="finale-sentence" class="finale-sentence">כל זיכרון שיצרנו הביא אותנו לכאן</p>
+</section>
+
+<!-- The question -->
+<section id="screen-question" class="screen">
+  <h2 id="question-text" class="question-text">רוצה להתחתן איתי?</h2>
+  <div class="answer-wrap">
+    <button id="btn-yes" class="btn-yes">כן! 💍</button>
+    <button id="btn-no" class="btn-no">לא</button>
+  </div>
+  <p id="teaser-text" class="teaser-text"></p>
+</section>
+
+<!-- Celebration -->
+<section id="screen-celebration" class="screen">
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  <div class="celebration-content">
+    <div class="celebration-heart">💍❤️</div>
+    <h2>ידעתי שתגידי כן!</h2>
+    <p>אני הכי מאושר בעולם.<br>אוהב אותך.</p>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
