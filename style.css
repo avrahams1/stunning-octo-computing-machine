@@ -403,6 +403,22 @@ body {
   opacity: 0.95;
 }
 
+.btn-debug {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  inset-inline-start: 0;
+  margin: 8px;
+  z-index: 999;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  cursor: pointer;
+}
+
 @media (max-width: 360px) {
   .question-text { font-size: 28px; }
   .board { width: 94vw; }

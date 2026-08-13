@@ -41,6 +41,19 @@ document.getElementById('btn-start').addEventListener('click', () => {
   initGame();
 });
 
+// ---- Debug mode: ?debug=1 shows a button to skip straight to the win sequence ----
+const DEBUG = new URLSearchParams(location.search).get('debug') === '1';
+if (DEBUG) {
+  const debugBtn = document.getElementById('btn-debug-finish');
+  debugBtn.style.display = 'block';
+  debugBtn.addEventListener('click', () => {
+    matchedPairs = CARD_IMAGES.length;
+    const pairCountEl = document.getElementById('pair-count');
+    if (pairCountEl) pairCountEl.textContent = matchedPairs;
+    startWinSequence();
+  });
+}
+
 // ---- Game ----
 let moveCount = 0;
 let matchedPairs = 0;
@@ -113,13 +126,15 @@ function onCardClick(card) {
       }
     }, 450);
   } else {
-    firstCard.classList.add('mismatch');
-    secondCard.classList.add('mismatch');
+    setTimeout(() => {
+      firstCard.classList.add('mismatch');
+      secondCard.classList.add('mismatch');
+    }, 500);
     setTimeout(() => {
       firstCard.classList.remove('flipped', 'mismatch');
       secondCard.classList.remove('flipped', 'mismatch');
       resetTurn();
-    }, 900);
+    }, 1400);
   }
 }
 
