@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>🍕</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="bg-food" aria-hidden="true"></div>
+
+<!-- The question -->
+<section id="screen-question" class="screen active">
+  <div class="wobble-emoji">🍕🍔🌭</div>
+  <h1 class="question-text">רוצה לאכול עכשיו?</h1>
+  <p class="subtitle">שאלה חשובה מאוד. תעני בכנות.</p>
+  <div class="answer-wrap">
+    <button id="btn-yes" class="btn-yes">כן!! 😋</button>
+    <button id="btn-no" class="btn-no">לא</button>
+  </div>
+  <p id="teaser-text" class="teaser-text"></p>
+</section>
+
+<!-- Celebration -->
+<section id="screen-celebration" class="screen">
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  <div class="celebration-content">
+    <div class="celebration-emoji">🎉🍕🎉</div>
+    <h2>יאללה, בדרך!</h2>
+    <p>ידעתי שתגידי כן.</p>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
